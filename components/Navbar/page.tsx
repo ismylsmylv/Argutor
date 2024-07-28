@@ -7,7 +7,7 @@ type Props = {};
 
 function Navbar({}: Props) {
   return (
-    <div className="Navbar w-1/4">
+    <div className="Navbar w-1/4  border-r-2">
       <ProfileBar />
       <SearchBar />
       <ChatList />
