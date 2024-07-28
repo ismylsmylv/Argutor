@@ -4,7 +4,7 @@ type Props = {};
 
 function ProfileBar({}: Props) {
   return (
-    <div className="w-full flex justify-between	items-center p-5 border-r-2	h-full">
+    <div className=" flex justify-between	items-center p-5 border-r-2	h-full ">
       <div className="profile  flex justify-left	items-center gap-2">
         <img
           className="size-10	object-cover	rounded-full "

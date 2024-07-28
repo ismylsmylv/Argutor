@@ -1,16 +1,16 @@
 import React from "react";
 import ChatList from "../ChatList/page";
 import ProfileBar from "../ProfileBar/page";
+import SearchBar from "../SearchBar/page";
 
 type Props = {};
 
 function Navbar({}: Props) {
   return (
-    <div className="Navbar w-1/5">
+    <div className="Navbar w-1/4">
       <ProfileBar />
-      <div className="">
-        <ChatList />
-      </div>
+      <SearchBar />
+      <ChatList />
     </div>
   );
 }
