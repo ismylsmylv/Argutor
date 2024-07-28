@@ -8,3 +8,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: 200ms linear;
 }
+
+::-webkit-scrollbar {
+  width: 0;
+}
