@@ -1,5 +1,6 @@
 import ChatHeading from "@/components/ChatHeading/page";
-import React from "react";
+import ChatInput from "@/components/ChatInput/page";
+import ChatTexts from "@/components/ChatTexts/page";
 
 type Props = {
   params: {
@@ -9,11 +10,14 @@ type Props = {
 
 function Chat({ params }: Props) {
   // Chat {params.userid}
+  // 172
   return (
-    <div className="h-full flex justify-between align-center w-full">
+    <div className="h-full flex justify-between align-center w-full flex-col	">
       <ChatHeading params={params} />
-      <div className="texts"></div>
-      <div className="input"></div>
+
+      <ChatTexts />
+
+      <ChatInput />
     </div>
   );
 }
