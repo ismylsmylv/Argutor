@@ -1,4 +1,7 @@
 "use client";
+import ChatHeading from "@/components/ChatHeading/page";
+import ChatInput from "@/components/ChatInput/page";
+import ChatTexts from "@/components/ChatTexts/page";
 import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
 
@@ -34,20 +37,17 @@ const General = () => {
   };
 
   return (
-    <div>
-      <h1>Chat</h1>
-      {JSON.stringify(messages)}
-      <div>
-        {messages.map((msg, index) => (
-          <div key={index}>{msg}</div>
-        ))}
-      </div>
-      <input
-        type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
+    <div className="h-full flex justify-between align-center w-full flex-col	">
+      <ChatHeading params={"General"} />
+
+      <ChatTexts messages={messages} />
+
+      <ChatInput
+        setMessage={setMessage}
+        message={message}
+        sendMessage={sendMessage}
       />
-      <button onClick={sendMessage}>Send</button>
+      <div></div>
     </div>
   );
 };
