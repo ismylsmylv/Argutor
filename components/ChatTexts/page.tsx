@@ -9,8 +9,9 @@ function ChatTexts({ messages }: Props) {
   useEffect(() => {
     if (typeof window !== "undefined") {
       // Client-side-only code
-      setheight(Number(window.innerHeight) - 172);
+      setheight(Number(window.innerHeight) - 91);
     }
+    // 172
   }, [height]);
   return (
     <div
@@ -34,6 +35,7 @@ function ChatTexts({ messages }: Props) {
         </div>
         <p className="mb-2 text-slate-500	 text-xs	">12:43</p>
       </div> */}
+      {messages.length == 0 && <p>Send a message to start a chat</p>}
       {messages.map((msg: string | any, index: string) => (
         <div className="message" key={index}>
           <div className="recieved w-fit max-w-xl bg-sky-500  p-3 rounded-lg mt-3 mb-1 text-white break-words	">
