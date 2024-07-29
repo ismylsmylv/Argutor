@@ -12,7 +12,10 @@ const General = () => {
   useEffect(() => {
     fetch("/api/socket"); // Initialize the API route
 
-    socketRef.current = io();
+    // socketRef.current = io();
+    socketRef.current = io({
+      path: "/api/socketio", // Adjust path to match server
+    });
 
     socketRef.current.on("connect", () => {
       console.log("connected to server");
