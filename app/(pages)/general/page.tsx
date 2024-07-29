@@ -36,6 +36,7 @@ const General = () => {
   return (
     <div>
       <h1>Chat</h1>
+      {JSON.stringify(messages)}
       <div>
         {messages.map((msg, index) => (
           <div key={index}>{msg}</div>
