@@ -1,6 +1,10 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  message: any;
+  setMessage: any;
+  sendMessage: any;
+};
 
 function ChatInput({ message, setMessage, sendMessage }: Props) {
   return (

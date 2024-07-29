@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-type Props = {};
+type Props = {
+  messages: any;
+};
 
 function ChatTexts({ messages }: Props) {
   const [height, setheight] = useState(0);
@@ -32,7 +34,7 @@ function ChatTexts({ messages }: Props) {
         </div>
         <p className="mb-2 text-slate-500	 text-xs	">12:43</p>
       </div> */}
-      {messages.map((msg, index) => (
+      {messages.map((msg: string | any, index: string) => (
         <div className="message" key={index}>
           <div className="recieved w-fit max-w-xl bg-sky-500  p-3 rounded-lg mt-3 mb-1 text-white break-words	">
             {msg}

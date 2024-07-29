@@ -15,9 +15,13 @@ function Chat({ params }: Props) {
     <div className="h-full flex justify-between align-center w-full flex-col	">
       <ChatHeading params={params} />
 
-      <ChatTexts />
+      <ChatTexts messages={undefined} />
 
-      <ChatInput />
+      <ChatInput
+        message={undefined}
+        setMessage={undefined}
+        sendMessage={undefined}
+      />
     </div>
   );
 }

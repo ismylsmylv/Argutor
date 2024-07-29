@@ -7,8 +7,8 @@ import io from "socket.io-client";
 
 const General = () => {
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
-  const socketRef = useRef();
+  const [messages, setMessages] = useState([] as any);
+  const socketRef = useRef() as any;
   // skfdfdj
   useEffect(() => {
     socketRef.current = io();
@@ -17,8 +17,8 @@ const General = () => {
       console.log("connected to server");
     });
 
-    socketRef.current.on("chat message", (msg) => {
-      setMessages((prevMessages) => [...prevMessages, msg]);
+    socketRef.current.on("chat message", (msg: string) => {
+      setMessages((prevMessages: any) => [...prevMessages, msg]);
       console.log(messages);
     });
     // Cleanup on component unmount
@@ -38,7 +38,7 @@ const General = () => {
 
   return (
     <div className="h-full flex justify-between align-center w-full flex-col	">
-      <ChatHeading params={"General"} />
+      <ChatHeading params={"General" as any} />
 
       <ChatTexts messages={messages} />
 
