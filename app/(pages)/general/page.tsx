@@ -1,32 +1,36 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
-
-let socket: any;
 
 const General = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-
+  const socketRef = useRef();
+  // skfdfdj
   useEffect(() => {
-    socket = io();
+    socketRef.current = io();
 
-    socket.on("connect", () => {
+    socketRef.current.on("connect", () => {
       console.log("connected to server");
     });
 
-    socket.on("chat message", (msg: string) => {
+    socketRef.current.on("chat message", (msg) => {
       setMessages((prevMessages) => [...prevMessages, msg]);
+      console.log(messages);
     });
-
+    // Cleanup on component unmount
     return () => {
-      socket.disconnect();
+      socketRef.current.disconnect();
     };
   }, []);
 
   const sendMessage = () => {
-    socket.emit("chat message", message);
-    setMessage("");
+    if (socketRef.current) {
+      socketRef.current.emit("chat message", message);
+      setMessage("");
+    } else {
+      console.error("Socket is not initialized.");
+    }
   };
 
   return (
