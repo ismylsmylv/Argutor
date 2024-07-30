@@ -1,7 +1,7 @@
 import { Server } from 'socket.io';
-
+import socket from 'socket.io'
 const SocketHandler = (req, res) => {
-    if (!res.socket.server.io) {
+    if (!res?.socket.server.io) {
         console.log('Setting up Socket.io server');
         const io = new Server(res.socket.server, {
             path: '/api/socketio',
